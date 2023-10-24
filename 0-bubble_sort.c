@@ -3,7 +3,6 @@
  * bubble_sort - sorts an array in ascending order
  * @array: array to sort
  * @size: size of array
- * Return: sorted array
  */
 
 void bubble_sort(int *array, size_t size)
@@ -11,7 +10,10 @@ void bubble_sort(int *array, size_t size)
 	int tmp;
 	size_t i, j = 0;
 
-	while (j < size)
+	if (array == NULL)
+		return;
+
+	for (j = size; j > 0; j--)
 	{
 		for (i = 0; i < size - j; i++)
 		{
@@ -22,9 +24,6 @@ void bubble_sort(int *array, size_t size)
 				array[i + 1] = tmp;
 				print_array(array, size);
 			}
-			else
-				continue;
 		}
-		j++;
 	}
 }
